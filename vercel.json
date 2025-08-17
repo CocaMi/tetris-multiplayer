@@ -1,35 +1,11 @@
 {
-  "version": 2,
-  "functions": {
-    "server/index.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "builds": [
     {
-      "src": "client/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "client/build"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server/index.js"
-    },
-    {
-      "src": "/socket.io/(.*)",
-      "dest": "/server/index.js"
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
   ]
 }
