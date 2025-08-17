@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Initialize socket connection
-    const newSocket = io(process.env.REACT_APP_SERVER_URL || 'https://your-actual-render-app.onrender.com'); // Replace with your actual Render URL
+    const newSocket = io(process.env.REACT_APP_SERVER_URL || window.location.origin);
     setSocket(newSocket);
 
     // Cleanup on unmount

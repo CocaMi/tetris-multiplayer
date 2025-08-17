@@ -23,7 +23,8 @@ const Lobby = ({ socket, player, onRoomCreate, onRoomJoin }) => {
 
       socket.on('room:joined', (data) => {
         console.log('Joined room:', data);
-        window.location.href = `/game/${data.roomId}`;
+        // Use React Router navigation instead of window.location
+        window.location.pathname = `/game/${data.roomId}`;
       });
 
       socket.on('room:full', (data) => {
@@ -38,7 +39,7 @@ const Lobby = ({ socket, player, onRoomCreate, onRoomJoin }) => {
 
   const fetchRooms = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/rooms');
+      const response = await fetch(`${window.location.origin}/api/rooms`);
       const data = await response.json();
       setRooms(data.rooms);
     } catch (error) {
