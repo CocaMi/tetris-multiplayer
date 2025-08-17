@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Initialize socket connection
-    const newSocket = io(process.env.REACT_APP_SERVER_URL || 'https://abc123.ngrok.io'); // Replace with your actual ngrok URL
+    const newSocket = io(process.env.REACT_APP_SERVER_URL || 'https://tetris-backend.onrender.com'); // Will be updated after Render deployment
     setSocket(newSocket);
 
     // Cleanup on unmount
