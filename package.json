@@ -4,29 +4,34 @@
   "description": "Real-time multiplayer Tetris game with battle mode and tournaments",
   "main": "server/index.js",
   "scripts": {
-    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "dev": "node init && concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "server:dev": "nodemon server/index.js",
     "client:dev": "cd client && npm run dev",
-    "build": "cd client && npm run build",
-    "start": "node server/index.js",
+    "build": "node init && cd client && npm run build",
+    "start": "node init && node server/index.js",
     "install:all": "npm install && cd client && npm install"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.7.2",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.0",
     "redis": "^4.6.7",
-    "jsonwebtoken": "^9.0.2",
-    "bcryptjs": "^2.4.3",
+    "socket.io": "^4.7.2",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
   },
-  "keywords": ["tetris", "multiplayer", "game", "real-time", "socket.io"],
+  "keywords": [
+    "tetris",
+    "multiplayer",
+    "game",
+    "real-time",
+    "socket.io"
+  ],
   "author": "",
   "license": "MIT"
 }

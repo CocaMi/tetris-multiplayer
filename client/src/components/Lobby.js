@@ -19,6 +19,8 @@ const Lobby = ({ socket, player, onRoomCreate, onRoomJoin }) => {
       socket.on('room:created', (data) => {
         console.log('Room created:', data);
         fetchRooms();
+        // Automatically join the creator to the room they just created
+        socket.emit('room:join', { roomId: data.roomId });
       });
 
       socket.on('room:joined', (data) => {
