@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-tetris-bg text-white font-game;
+  }
+}
+
+@layer components {
+  .game-board {
+    @apply border-2 border-tetris-border bg-tetris-grid;
+  }
+  
+  .game-cell {
+    @apply border border-tetris-border;
+  }
+  
+  .tetris-piece-i { @apply bg-tetris-i; }
+  .tetris-piece-o { @apply bg-tetris-o; }
+  .tetris-piece-t { @apply bg-tetris-t; }
+  .tetris-piece-s { @apply bg-tetris-s; }
+  .tetris-piece-z { @apply bg-tetris-z; }
+  .tetris-piece-j { @apply bg-tetris-j; }
+  .tetris-piece-l { @apply bg-tetris-l; }
+  
+  .power-up-button {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors;
+  }
+  
+  .room-card {
+    @apply bg-tetris-grid border border-tetris-border rounded-lg p-4 hover:border-tetris-t transition-colors;
+  }
+}
+
+@layer utilities {
+  .glow {
+    filter: drop-shadow(0 0 8px currentColor);
+  }
+  
+  .game-text {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
