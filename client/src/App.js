@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     // Initialize socket connection
-    const newSocket = io(process.env.REACT_APP_SERVER_URL || 'https://tetris-backend.onrender.com'); // Will be updated after Render deployment
+    const newSocket = io(process.env.REACT_APP_SERVER_URL || 'https://your-actual-render-app.onrender.com'); // Replace with your actual Render URL
     setSocket(newSocket);
 
     // Cleanup on unmount
